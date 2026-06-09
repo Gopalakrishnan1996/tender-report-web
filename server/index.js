@@ -24,34 +24,86 @@ const email_ids = (process.env.EMAIL_IDS || "")
   .map((s) => s.trim())
   .filter(Boolean);
 
-// Sender (Gmail SMTP) credentials.
+// Transport selection:
+//   * If RESEND_API_KEY is set, send via the Resend HTTP API. Use this in
+//     production (Render's free tier blocks outbound SMTP).
+//   * Otherwise fall back to Gmail SMTP (works locally).
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+// From address for Resend. "onboarding@resend.dev" works with no domain setup
+// (Resend then only delivers to your own account email).
+const EMAIL_FROM = process.env.EMAIL_FROM || "onboarding@resend.dev";
+
+// Sender (Gmail SMTP) credentials — only needed for the local SMTP fallback.
 const SENDER_EMAIL = process.env.SENDER_EMAIL;
 const SENDER_PASSWORD = process.env.SENDER_PASSWORD;
 
 // Cloud hosts (Render/Railway) inject PORT; fall back to local default.
 const PORT = process.env.PORT || process.env.EMAIL_SERVER_PORT || 3001;
 
-if (!SENDER_EMAIL || !SENDER_PASSWORD || email_ids.length === 0) {
+const useResend = Boolean(RESEND_API_KEY);
+
+if (email_ids.length === 0 || (!useResend && (!SENDER_EMAIL || !SENDER_PASSWORD))) {
   console.error(
-    "Missing email config. Set SENDER_EMAIL, SENDER_PASSWORD and EMAIL_IDS in tender-report-web/.env"
+    "Missing email config. Set EMAIL_IDS plus either RESEND_API_KEY (HTTP) " +
+      "or SENDER_EMAIL + SENDER_PASSWORD (SMTP) in the environment / .env"
   );
   process.exit(1);
 }
 // ----------------------------------------------------------------------------
 
-// Use explicit host/port 587 (STARTTLS). Many PaaS hosts throttle the
-// default Gmail SSL port (465); 587 is more reliable. Generous timeouts
-// cover the host's first outbound connection.
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  requireTLS: true,
-  auth: { user: SENDER_EMAIL, pass: SENDER_PASSWORD },
-  connectionTimeout: 30000,
-  greetingTimeout: 30000,
-  socketTimeout: 30000,
-});
+// SMTP fallback transport (Gmail). Only built when Resend is not configured.
+// Port 587 (STARTTLS) with generous timeouts for first outbound connection.
+const transporter = useResend
+  ? null
+  : nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      requireTLS: true,
+      auth: { user: SENDER_EMAIL, pass: SENDER_PASSWORD },
+      connectionTimeout: 30000,
+      greetingTimeout: 30000,
+      socketTimeout: 30000,
+    });
+
+// Send the report email via whichever transport is configured.
+async function sendReportEmail({ subject, text, filename, csv }) {
+  // Prepend BOM so Excel reads UTF-8 (umlauts) correctly.
+  const body = "﻿" + csv;
+
+  if (useResend) {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: EMAIL_FROM,
+        to: email_ids,
+        subject,
+        text,
+        attachments: [
+          { filename, content: Buffer.from(body, "utf-8").toString("base64") },
+        ],
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data?.message || `Resend HTTP ${res.status}`);
+    }
+    return data.id;
+  }
+
+  const info = await transporter.sendMail({
+    from: SENDER_EMAIL,
+    to: email_ids.join(", "),
+    subject,
+    text,
+    attachments: [{ filename, content: body, contentType: "text/csv; charset=utf-8" }],
+  });
+  return info.messageId;
+}
 
 // --- Per-platform email content ---------------------------------------------
 // Friendly display names + source site, keyed by the report's platform key.
@@ -142,23 +194,15 @@ const server = http.createServer(async (req, res) => {
 
       const name = platform || "tender";
       const count = Number(recordCount);
-      const info = await transporter.sendMail({
-        from: SENDER_EMAIL,
-        to: email_ids.join(", "),
+      const messageId = await sendReportEmail({
         subject: buildSubject(name, count),
         text: buildMessage(name, count),
-        attachments: [
-          {
-            filename: filename || `${name}.csv`,
-            // Prepend BOM so Excel reads UTF-8 (umlauts) correctly.
-            content: "﻿" + csv,
-            contentType: "text/csv; charset=utf-8",
-          },
-        ],
+        filename: filename || `${name}.csv`,
+        csv,
       });
 
-      console.log(`Sent "${name}" report to ${email_ids.join(", ")} (${info.messageId})`);
-      return sendJson(res, 200, { ok: true, recipients: email_ids, messageId: info.messageId });
+      console.log(`Sent "${name}" report to ${email_ids.join(", ")} (${messageId})`);
+      return sendJson(res, 200, { ok: true, recipients: email_ids, messageId });
     } catch (err) {
       console.error("send-report failed:", err.message);
       return sendJson(res, 500, { ok: false, error: err.message });
@@ -169,5 +213,6 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Email server listening on http://localhost:${PORT} -> ${email_ids.join(", ")}`);
+  const via = useResend ? `Resend HTTP API (from ${EMAIL_FROM})` : "Gmail SMTP";
+  console.log(`Email server on http://localhost:${PORT} via ${via} -> ${email_ids.join(", ")}`);
 });
