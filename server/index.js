@@ -60,6 +60,9 @@ const transporter = useResend
       port: 587,
       secure: false,
       requireTLS: true,
+      // Force IPv4 — cloud hosts often resolve an unreachable IPv6 address
+      // for smtp.gmail.com, which surfaces as a connection timeout.
+      family: 4,
       auth: { user: SENDER_EMAIL, pass: SENDER_PASSWORD },
       connectionTimeout: 30000,
       greetingTimeout: 30000,
