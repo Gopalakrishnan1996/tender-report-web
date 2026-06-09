@@ -39,9 +39,18 @@ if (!SENDER_EMAIL || !SENDER_PASSWORD || email_ids.length === 0) {
 }
 // ----------------------------------------------------------------------------
 
+// Use explicit host/port 587 (STARTTLS). Many PaaS hosts throttle the
+// default Gmail SSL port (465); 587 is more reliable. Generous timeouts
+// cover the host's first outbound connection.
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  requireTLS: true,
   auth: { user: SENDER_EMAIL, pass: SENDER_PASSWORD },
+  connectionTimeout: 30000,
+  greetingTimeout: 30000,
+  socketTimeout: 30000,
 });
 
 // --- Per-platform email content ---------------------------------------------
