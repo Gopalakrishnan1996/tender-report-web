@@ -5,5 +5,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/tender-report-web/",
   plugins: [react()],
-  server: { port: 5173, open: true },
+  server: {
+    port: 5173,
+    open: true,
+    // Forward email-server API calls to the Node backend (npm run server).
+    proxy: {
+      "/api": "http://localhost:3001",
+    },
+  },
 });

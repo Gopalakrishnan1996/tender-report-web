@@ -1,0 +1,18 @@
+# Render Blueprint for the tender-report email backend.
+# In Render: New > Blueprint > pick this repo. It creates the service below.
+# Then set the three secret env vars (marked sync:false) in the dashboard.
+services:
+  - type: web
+    name: tender-report-email
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: SENDER_EMAIL
+        sync: false        # set in dashboard: pgopalakrishnan1996@gmail.com
+      - key: SENDER_PASSWORD
+        sync: false        # set in dashboard: Gmail 16-char App Password
+      - key: EMAIL_IDS
+        sync: false        # set in dashboard: p.gkrish18@gmail.com

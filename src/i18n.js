@@ -12,6 +12,9 @@ export const translations = {
     noRecords: "No records for this platform.",
     export: "Export",
     sendEmail: "Send Email",
+    emailSending: "Sending…",
+    emailSent: "Report emailed to",
+    emailFailed: "Failed to send email",
     language: "Language",
     // Top info-panel field labels (keyed by raw JSON field).
     info: {
@@ -44,6 +47,9 @@ export const translations = {
     noRecords: "Keine Einträge für diese Plattform.",
     export: "Exportieren",
     sendEmail: "E-Mail senden",
+    emailSending: "Wird gesendet…",
+    emailSent: "Bericht gesendet an",
+    emailFailed: "E-Mail konnte nicht gesendet werden",
     language: "Sprache",
     info: {
       "api url": "API-URL",

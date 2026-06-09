@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import Sidebar from "./components/Sidebar.jsx";
-import InfoPanel from "./components/InfoPanel.jsx";
 import DataTable from "./components/DataTable.jsx";
 import Toolbar from "./components/Toolbar.jsx";
 import LanguageSwitch from "./components/LanguageSwitch.jsx";
@@ -53,7 +52,6 @@ export default function App() {
           {!error && !report && <div className="state">{t.loading}</div>}
           {current && (
             <>
-              <InfoPanel data={current} t={t} />
               <Toolbar platformKey={selected} data={current} columns={columns} t={t} />
               <DataTable rows={current.data || []} columns={columns} t={t} />
             </>
