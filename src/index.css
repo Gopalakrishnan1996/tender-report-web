@@ -273,13 +273,14 @@ body {
   text-decoration: underline;
 }
 
-/* Auto-hiding notification toast (fixed bottom-right). */
+/* Auto-hiding notification toast (fixed top-center). */
 .toast {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  max-width: 380px;
+  max-width: 90vw;
   padding: 12px 16px;
   border-radius: 10px;
   color: #fff;
@@ -297,10 +298,10 @@ body {
 @keyframes toast-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translate(-50%, -8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%);
   }
 }
