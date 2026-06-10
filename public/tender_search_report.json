@@ -3115,153 +3115,8 @@
     "method": "GET (returns full JSON list; filtered locally by keyword on the title)",
     "sample payload / params": "Query params: id=V (published tenders), BL=<Bundesland>, CPV=<cpv>. No text-search param.",
     "headers / token": "No token required. (X-Requested-With: XMLHttpRequest used by the site.)",
-    "records (deduped)": 12,
-    "data": [
-      {
-        "searchkey": "Bekleidung",
-        "published": "2026-03-31",
-        "deadline": "2026-07-06",
-        "title": "Full-Service-Logistikdienstleistung für Dienst- und Sonderbekleidung der Bayer. Polizei und Justiz Offenes Verfahren",
-        "authority": "Präsidium der Bayer. Bereitschaftspolizei",
-        "procedure": "Offenes Verfahren",
-        "order": "VGV",
-        "cpv": "",
-        "id": "578741",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/5fb3c760-08dd-43dc-927d-8477d1f92a0e?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Bekleidung",
-        "published": "2026-05-07",
-        "deadline": "2026-06-24",
-        "title": "MS Gars - Prallwand und Bekleidung Türen/ Tore BA2 Offenes Verfahren",
-        "authority": "BayernGrund GmbH",
-        "procedure": "Offenes Verfahren",
-        "order": "VOB",
-        "cpv": "",
-        "id": "583164",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/2c868289-dddd-413f-ac98-b9bc3dea1d40?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Bekleidung",
-        "published": "2026-06-04",
-        "deadline": "2026-07-06",
-        "title": "Neubau eines FGH mit Rettungswache in Cremlingen - Wandbekleidung, Dämmung mit Riemchen Offenes Verfahren",
-        "authority": "Stadt Wolfenbüttel",
-        "procedure": "Offenes Verfahren",
-        "order": "VOB",
-        "cpv": "",
-        "id": "586388",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/21c80eff-bd73-4e3f-a912-3151cb02eb1d?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Bekleidung",
-        "published": "2026-05-08",
-        "deadline": "2026-06-08",
-        "title": "Rahmenvertrag zur Ersatzbeschaffung von Brandschutzüberbekleidung Offenes Verfahren",
-        "authority": "Stadt Solingen",
-        "procedure": "Offenes Verfahren",
-        "order": "VGV",
-        "cpv": "",
-        "id": "583159",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/5a408a7c-a32d-40bc-88c4-fe6dd785c2f9?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Bekleidung",
-        "published": "2026-05-12",
-        "deadline": "2026-06-11",
-        "title": "Rahmenverträge für Rettungsdienstbekleidung und Feuerwehr Dienstbekleidung Offenes Verfahren",
-        "authority": "Stadt Solingen",
-        "procedure": "Offenes Verfahren",
-        "order": "VGV",
-        "cpv": "",
-        "id": "583553",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/675c43eb-dcfa-4818-9ae9-4dc3f1f5a3f5?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Dienstbekleidung",
-        "published": "2026-05-12",
-        "deadline": "2026-06-11",
-        "title": "Rahmenverträge für Rettungsdienstbekleidung und Feuerwehr Dienstbekleidung Offenes Verfahren",
-        "authority": "Stadt Solingen",
-        "procedure": "Offenes Verfahren",
-        "order": "VGV",
-        "cpv": "",
-        "id": "583553",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/675c43eb-dcfa-4818-9ae9-4dc3f1f5a3f5?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Kleidung",
-        "published": "2026-05-22",
-        "deadline": "2026-06-26",
-        "title": "Fahrdienstkleidung_SNS_09/2025 Verhandlungsverfahren mit Teilnahmewettbewerb (Teil 1)",
-        "authority": "Saarländische Nahverkehrs-Service GmbH",
-        "procedure": "Verhandlungsverfahren mit Teilnahmewettbewerb (Teil 1)",
-        "order": "VGV",
-        "cpv": "",
-        "id": "584934",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/707d122b-1e5b-469b-aa78-9f2ba0e392c1?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Kleidung",
-        "published": "2026-03-31",
-        "deadline": "2026-07-06",
-        "title": "Full-Service-Logistikdienstleistung für Dienst- und Sonderbekleidung der Bayer. Polizei und Justiz Offenes Verfahren",
-        "authority": "Präsidium der Bayer. Bereitschaftspolizei",
-        "procedure": "Offenes Verfahren",
-        "order": "VGV",
-        "cpv": "",
-        "id": "578741",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/5fb3c760-08dd-43dc-927d-8477d1f92a0e?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Kleidung",
-        "published": "2026-05-07",
-        "deadline": "2026-06-24",
-        "title": "MS Gars - Prallwand und Bekleidung Türen/ Tore BA2 Offenes Verfahren",
-        "authority": "BayernGrund GmbH",
-        "procedure": "Offenes Verfahren",
-        "order": "VOB",
-        "cpv": "",
-        "id": "583164",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/2c868289-dddd-413f-ac98-b9bc3dea1d40?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Kleidung",
-        "published": "2026-06-04",
-        "deadline": "2026-07-06",
-        "title": "Neubau eines FGH mit Rettungswache in Cremlingen - Wandbekleidung, Dämmung mit Riemchen Offenes Verfahren",
-        "authority": "Stadt Wolfenbüttel",
-        "procedure": "Offenes Verfahren",
-        "order": "VOB",
-        "cpv": "",
-        "id": "586388",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/21c80eff-bd73-4e3f-a912-3151cb02eb1d?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Kleidung",
-        "published": "2026-05-08",
-        "deadline": "2026-06-08",
-        "title": "Rahmenvertrag zur Ersatzbeschaffung von Brandschutzüberbekleidung Offenes Verfahren",
-        "authority": "Stadt Solingen",
-        "procedure": "Offenes Verfahren",
-        "order": "VGV",
-        "cpv": "",
-        "id": "583159",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/5a408a7c-a32d-40bc-88c4-fe6dd785c2f9?isProd=true&FullSize=false&DashOff=true&UID="
-      },
-      {
-        "searchkey": "Kleidung",
-        "published": "2026-05-12",
-        "deadline": "2026-06-11",
-        "title": "Rahmenverträge für Rettungsdienstbekleidung und Feuerwehr Dienstbekleidung Offenes Verfahren",
-        "authority": "Stadt Solingen",
-        "procedure": "Offenes Verfahren",
-        "order": "VGV",
-        "cpv": "",
-        "id": "583553",
-        "detailurl": "https://www.deutsche-evergabe.de/verfahren/BekSummaryModal/675c43eb-dcfa-4818-9ae9-4dc3f1f5a3f5?isProd=true&FullSize=false&DashOff=true&UID="
-      }
-    ]
+    "records (deduped)": 0,
+    "data": []
   },
   "simap_ch": {
     "folder": "simap_ch",
@@ -30501,5 +30356,1429 @@
     "headers / token": "No token required (public GET).",
     "records (deduped)": 0,
     "data": []
+  },
+  "keyword_coverage_matrix": {
+    "folder": "keyword_coverage_matrix",
+    "report": "Records per platform per search key (0 = no data).",
+    "records (deduped)": 17,
+    "data": [
+      {
+        "search key": "Shirt",
+        "vergabemarktplatz_brandenburg": 1,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 1,
+        "vergabe_rlp": 2,
+        "ausschreibungen_landbw": 1,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 226,
+        "vergabe_hessen": 0,
+        "total": 232,
+        "platforms with data": 6
+      },
+      {
+        "search key": "T-Shirt",
+        "vergabemarktplatz_brandenburg": 1,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 2,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 3,
+        "ted_europa": 122,
+        "vergabe_hessen": 0,
+        "total": 128,
+        "platforms with data": 4
+      },
+      {
+        "search key": "Unterwäsche",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 33,
+        "vergabe_hessen": 0,
+        "total": 34,
+        "platforms with data": 2
+      },
+      {
+        "search key": "Base-Layer",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 5,
+        "vergabe_hessen": 0,
+        "total": 6,
+        "platforms with data": 2
+      },
+      {
+        "search key": "Funktionell",
+        "vergabemarktplatz_brandenburg": 1,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 1,
+        "ausschreibungen_landbw": 10,
+        "deutsche_evergabe": 0,
+        "simap_ch": 8,
+        "ted_europa": 396,
+        "vergabe_hessen": 0,
+        "total": 416,
+        "platforms with data": 5
+      },
+      {
+        "search key": "Flammhemmend",
+        "vergabemarktplatz_brandenburg": 1,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 1,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 5,
+        "vergabe_hessen": 0,
+        "total": 8,
+        "platforms with data": 4
+      },
+      {
+        "search key": "Schwer entflammbar",
+        "vergabemarktplatz_brandenburg": 64,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 51,
+        "evergabe_nrw": 63,
+        "vergabe_rlp": 14,
+        "ausschreibungen_landbw": 11,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 20,
+        "vergabe_hessen": 0,
+        "total": 224,
+        "platforms with data": 7
+      },
+      {
+        "search key": "Hose",
+        "vergabemarktplatz_brandenburg": 2,
+        "evergabe_sachsen": 1,
+        "evergabe_online": 3,
+        "vergabe_niedersachsen": 5,
+        "evergabe_nrw": 4,
+        "vergabe_rlp": 1,
+        "ausschreibungen_landbw": 2,
+        "deutsche_evergabe": 0,
+        "simap_ch": 4,
+        "ted_europa": 1132,
+        "vergabe_hessen": 0,
+        "total": 1154,
+        "platforms with data": 9
+      },
+      {
+        "search key": "Unterhose",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 2,
+        "ted_europa": 9,
+        "vergabe_hessen": 0,
+        "total": 11,
+        "platforms with data": 2
+      },
+      {
+        "search key": "Socken",
+        "vergabemarktplatz_brandenburg": 1,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 1,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 393,
+        "vergabe_hessen": 0,
+        "total": 396,
+        "platforms with data": 4
+      },
+      {
+        "search key": "Hauben",
+        "vergabemarktplatz_brandenburg": 3,
+        "evergabe_sachsen": 1,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 3,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 328,
+        "vergabe_hessen": 0,
+        "total": 336,
+        "platforms with data": 5
+      },
+      {
+        "search key": "Flammschutzhauben",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 0,
+        "vergabe_hessen": 0,
+        "total": 1,
+        "platforms with data": 1
+      },
+      {
+        "search key": "Balaclava",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 0,
+        "vergabe_hessen": 0,
+        "total": 1,
+        "platforms with data": 1
+      },
+      {
+        "search key": "Schlauchschal",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 1,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 7,
+        "vergabe_hessen": 0,
+        "total": 9,
+        "platforms with data": 3
+      },
+      {
+        "search key": "Scarf",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 0,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 1,
+        "vergabe_hessen": 0,
+        "total": 2,
+        "platforms with data": 2
+      },
+      {
+        "search key": "Schnittschutz",
+        "vergabemarktplatz_brandenburg": 1,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 1,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 4,
+        "vergabe_hessen": 0,
+        "total": 7,
+        "platforms with data": 4
+      },
+      {
+        "search key": "Schnitthemmend",
+        "vergabemarktplatz_brandenburg": 0,
+        "evergabe_sachsen": 0,
+        "evergabe_online": 0,
+        "vergabe_niedersachsen": 1,
+        "evergabe_nrw": 0,
+        "vergabe_rlp": 0,
+        "ausschreibungen_landbw": 0,
+        "deutsche_evergabe": 0,
+        "simap_ch": 1,
+        "ted_europa": 1,
+        "vergabe_hessen": 0,
+        "total": 3,
+        "platforms with data": 3
+      },
+      {
+        "search key": "TOTAL (17 keys)",
+        "vergabemarktplatz_brandenburg": 75,
+        "evergabe_sachsen": 2,
+        "evergabe_online": 5,
+        "vergabe_niedersachsen": 62,
+        "evergabe_nrw": 68,
+        "vergabe_rlp": 20,
+        "ausschreibungen_landbw": 24,
+        "deutsche_evergabe": 0,
+        "simap_ch": 30,
+        "ted_europa": 2682,
+        "vergabe_hessen": 0,
+        "total": 2968,
+        "platforms with data": ""
+      }
+    ]
+  },
+  "keyword_coverage_long": {
+    "folder": "keyword_coverage_long",
+    "report": "One row per platform x search key with availability flag.",
+    "records (deduped)": 187,
+    "data": [
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Shirt",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Shirt",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Shirt",
+        "available": "Yes",
+        "record count": 2
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Shirt",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Shirt",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Shirt",
+        "available": "Yes",
+        "record count": 226
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "T-Shirt",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "T-Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "T-Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "T-Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "T-Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "T-Shirt",
+        "available": "Yes",
+        "record count": 2
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "T-Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "T-Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "T-Shirt",
+        "available": "Yes",
+        "record count": 3
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "T-Shirt",
+        "available": "Yes",
+        "record count": 122
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "T-Shirt",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Unterwäsche",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Unterwäsche",
+        "available": "Yes",
+        "record count": 33
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Unterwäsche",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Base-Layer",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Base-Layer",
+        "available": "Yes",
+        "record count": 5
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Base-Layer",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Funktionell",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Funktionell",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Funktionell",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Funktionell",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Funktionell",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Funktionell",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Funktionell",
+        "available": "Yes",
+        "record count": 10
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Funktionell",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Funktionell",
+        "available": "Yes",
+        "record count": 8
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Funktionell",
+        "available": "Yes",
+        "record count": 396
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Funktionell",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Flammhemmend",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Flammhemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Flammhemmend",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Flammhemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Flammhemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Flammhemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Flammhemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Flammhemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Flammhemmend",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Flammhemmend",
+        "available": "Yes",
+        "record count": 5
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Flammhemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Schwer entflammbar",
+        "available": "Yes",
+        "record count": 64
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Schwer entflammbar",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Schwer entflammbar",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Schwer entflammbar",
+        "available": "Yes",
+        "record count": 51
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Schwer entflammbar",
+        "available": "Yes",
+        "record count": 63
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Schwer entflammbar",
+        "available": "Yes",
+        "record count": 14
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Schwer entflammbar",
+        "available": "Yes",
+        "record count": 11
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Schwer entflammbar",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Schwer entflammbar",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Schwer entflammbar",
+        "available": "Yes",
+        "record count": 20
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Schwer entflammbar",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 2
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 3
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 5
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 4
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 2
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Hose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 4
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Hose",
+        "available": "Yes",
+        "record count": 1132
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Hose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Unterhose",
+        "available": "Yes",
+        "record count": 2
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Unterhose",
+        "available": "Yes",
+        "record count": 9
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Unterhose",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Socken",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Socken",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Socken",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Socken",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Socken",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Socken",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Socken",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Socken",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Socken",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Socken",
+        "available": "Yes",
+        "record count": 393
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Socken",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Hauben",
+        "available": "Yes",
+        "record count": 3
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Hauben",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Hauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Hauben",
+        "available": "Yes",
+        "record count": 3
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Hauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Hauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Hauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Hauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Hauben",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Hauben",
+        "available": "Yes",
+        "record count": 328
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Hauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Flammschutzhauben",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Flammschutzhauben",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Balaclava",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Balaclava",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Schlauchschal",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Schlauchschal",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Schlauchschal",
+        "available": "Yes",
+        "record count": 7
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Schlauchschal",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Scarf",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Scarf",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Scarf",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Schnittschutz",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Schnittschutz",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Schnittschutz",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Schnittschutz",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Schnittschutz",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Schnittschutz",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Schnittschutz",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Schnittschutz",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Schnittschutz",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Schnittschutz",
+        "available": "Yes",
+        "record count": 4
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Schnittschutz",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabemarktplatz_brandenburg",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_sachsen",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "evergabe_online",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_niedersachsen",
+        "search key": "Schnitthemmend",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "evergabe_nrw",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "vergabe_rlp",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "ausschreibungen_landbw",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "deutsche_evergabe",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      },
+      {
+        "platform": "simap_ch",
+        "search key": "Schnitthemmend",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "ted_europa",
+        "search key": "Schnitthemmend",
+        "available": "Yes",
+        "record count": 1
+      },
+      {
+        "platform": "vergabe_hessen",
+        "search key": "Schnitthemmend",
+        "available": "No",
+        "record count": 0
+      }
+    ]
   }
 }
