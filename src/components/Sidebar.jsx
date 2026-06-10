@@ -6,9 +6,20 @@ function toDisplayName(key) {
     .join(" ");
 }
 
-export default function Sidebar({ items, selected, onSelect, title }) {
+export default function Sidebar({ items, selected, onSelect, title, dashboardLabel }) {
   return (
     <aside className="sidebar">
+      <nav>
+        <button
+          className={`sidebar__item sidebar__item--dashboard${
+            selected === "dashboard" ? " is-active" : ""
+          }`}
+          onClick={() => onSelect("dashboard")}
+        >
+          <span className="sidebar__icon" aria-hidden="true">▤</span>
+          {dashboardLabel}
+        </button>
+      </nav>
       <div className="sidebar__title">{title}</div>
       <nav>
         {items.map((key) => (

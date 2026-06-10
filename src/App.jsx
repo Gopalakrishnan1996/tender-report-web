@@ -3,12 +3,13 @@ import Sidebar from "./components/Sidebar.jsx";
 import DataTable from "./components/DataTable.jsx";
 import Toolbar from "./components/Toolbar.jsx";
 import LanguageSwitch from "./components/LanguageSwitch.jsx";
+import Dashboard, { COVERAGE_KEYS } from "./components/Dashboard.jsx";
 import { translations } from "./i18n.js";
 import { columnsFor } from "./columns.js";
 
 export default function App() {
   const [report, setReport] = useState(null);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState("dashboard");
   const [error, setError] = useState(null);
   const [lang, setLang] = useState("en");
 
@@ -20,16 +21,17 @@ export default function App() {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       })
-      .then((data) => {
-        setReport(data);
-        const first = Object.keys(data)[0];
-        if (first) setSelected(first);
-      })
+      .then((data) => setReport(data))
       .catch((err) => setError(err.message));
   }, []);
 
-  const keys = useMemo(() => (report ? Object.keys(report) : []), [report]);
-  const current = report && selected ? report[selected] : null;
+  // Platform list excludes the coverage datasets — those power the dashboard.
+  const keys = useMemo(
+    () => (report ? Object.keys(report).filter((k) => !COVERAGE_KEYS.includes(k)) : []),
+    [report]
+  );
+  const isDashboard = selected === "dashboard";
+  const current = report && !isDashboard ? report[selected] : null;
   const columns = current ? columnsFor(selected, current.data) : [];
 
   return (
@@ -41,7 +43,13 @@ export default function App() {
       </header>
 
       <div className="app-body">
-        <Sidebar items={keys} selected={selected} onSelect={setSelected} title={t.platforms} />
+        <Sidebar
+          items={keys}
+          selected={selected}
+          onSelect={setSelected}
+          title={t.platforms}
+          dashboardLabel={t.dashboard}
+        />
 
         <main className="content">
           {error && (
@@ -50,6 +58,7 @@ export default function App() {
             </div>
           )}
           {!error && !report && <div className="state">{t.loading}</div>}
+          {report && isDashboard && <Dashboard report={report} t={t} />}
           {current && (
             <>
               <Toolbar platformKey={selected} data={current} columns={columns} t={t} />
