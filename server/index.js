@@ -24,14 +24,18 @@ const email_ids = (process.env.EMAIL_IDS || "")
   .map((s) => s.trim())
   .filter(Boolean);
 
-// Transport selection:
-//   * If RESEND_API_KEY is set, send via the Resend HTTP API. Use this in
-//     production (Render's free tier blocks outbound SMTP).
-//   * Otherwise fall back to Gmail SMTP (works locally).
+// Transport selection (first available wins). All are HTTP except SMTP:
+//   * BREVO_API_KEY  -> Brevo HTTP API. Delivers to ANY recipient once you've
+//     verified the sender in Brevo (no domain needed). Best for many recipients.
+//   * RESEND_API_KEY -> Resend HTTP API (only your own address without a domain).
+//   * else           -> Gmail SMTP (works locally; blocked on Render free tier).
+const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-// From address for Resend. "onboarding@resend.dev" works with no domain setup
-// (Resend then only delivers to your own account email).
-const EMAIL_FROM = process.env.EMAIL_FROM || "onboarding@resend.dev";
+// From address. For Brevo this MUST be your verified sender; for Resend without
+// a domain use onboarding@resend.dev.
+const EMAIL_FROM =
+  process.env.EMAIL_FROM ||
+  (BREVO_API_KEY ? process.env.SENDER_EMAIL : "onboarding@resend.dev");
 
 // Sender (Gmail SMTP) credentials — only needed for the local SMTP fallback.
 const SENDER_EMAIL = process.env.SENDER_EMAIL;
@@ -40,20 +44,22 @@ const SENDER_PASSWORD = process.env.SENDER_PASSWORD;
 // Cloud hosts (Render/Railway) inject PORT; fall back to local default.
 const PORT = process.env.PORT || process.env.EMAIL_SERVER_PORT || 3001;
 
-const useResend = Boolean(RESEND_API_KEY);
+const useBrevo = Boolean(BREVO_API_KEY);
+const useResend = !useBrevo && Boolean(RESEND_API_KEY);
+const useHttp = useBrevo || useResend;
 
-if (email_ids.length === 0 || (!useResend && (!SENDER_EMAIL || !SENDER_PASSWORD))) {
+if (email_ids.length === 0 || (!useHttp && (!SENDER_EMAIL || !SENDER_PASSWORD))) {
   console.error(
-    "Missing email config. Set EMAIL_IDS plus either RESEND_API_KEY (HTTP) " +
-      "or SENDER_EMAIL + SENDER_PASSWORD (SMTP) in the environment / .env"
+    "Missing email config. Set EMAIL_IDS plus one of: BREVO_API_KEY, " +
+      "RESEND_API_KEY, or SENDER_EMAIL + SENDER_PASSWORD (SMTP)."
   );
   process.exit(1);
 }
 // ----------------------------------------------------------------------------
 
-// SMTP fallback transport (Gmail). Only built when Resend is not configured.
+// SMTP fallback transport (Gmail). Only built when no HTTP API is configured.
 // Port 587 (STARTTLS) with generous timeouts for first outbound connection.
-const transporter = useResend
+const transporter = useHttp
   ? null
   : nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -73,6 +79,30 @@ const transporter = useResend
 async function sendReportEmail({ subject, text, filename, csv }) {
   // Prepend BOM so Excel reads UTF-8 (umlauts) correctly.
   const body = "﻿" + csv;
+  const base64 = Buffer.from(body, "utf-8").toString("base64");
+
+  if (useBrevo) {
+    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "api-key": BREVO_API_KEY,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        sender: { email: EMAIL_FROM, name: "Tender Report Bot" },
+        to: email_ids.map((email) => ({ email })),
+        subject,
+        textContent: text,
+        attachment: [{ name: filename, content: base64 }],
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data?.message || `Brevo HTTP ${res.status}`);
+    }
+    return data.messageId;
+  }
 
   if (useResend) {
     const res = await fetch("https://api.resend.com/emails", {
@@ -86,9 +116,7 @@ async function sendReportEmail({ subject, text, filename, csv }) {
         to: email_ids,
         subject,
         text,
-        attachments: [
-          { filename, content: Buffer.from(body, "utf-8").toString("base64") },
-        ],
+        attachments: [{ filename, content: base64 }],
       }),
     });
     const data = await res.json().catch(() => ({}));
@@ -216,6 +244,10 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  const via = useResend ? `Resend HTTP API (from ${EMAIL_FROM})` : "Gmail SMTP";
+  const via = useBrevo
+    ? `Brevo HTTP API (from ${EMAIL_FROM})`
+    : useResend
+    ? `Resend HTTP API (from ${EMAIL_FROM})`
+    : "Gmail SMTP";
   console.log(`Email server on http://localhost:${PORT} via ${via} -> ${email_ids.join(", ")}`);
 });
