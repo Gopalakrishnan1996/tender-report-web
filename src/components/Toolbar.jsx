@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { buildCsv, downloadCsv } from "../exportCsv.js";
 
 export default function Toolbar({ platformKey, data, columns, t, lang }) {
   const [sending, setSending] = useState(false);
+  const [toast, setToast] = useState(null); // { type: "success"|"error", msg }
+  const timerRef = useRef(null);
+
+  // Show a toast that auto-hides after 3 seconds.
+  function showToast(type, msg) {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setToast({ type, msg });
+    timerRef.current = setTimeout(() => setToast(null), 3000);
+  }
+
+  useEffect(() => () => timerRef.current && clearTimeout(timerRef.current), []);
 
   function handleExport() {
     const csv = buildCsv({ data, columns, t });
@@ -31,9 +42,10 @@ export default function Toolbar({ platformKey, data, columns, t, lang }) {
       if (!res.ok || !result.ok) {
         throw new Error(result.error || `HTTP ${res.status}`);
       }
-      window.alert(`${t.emailSent}: ${(result.recipients || []).join(", ")}`);
+      const to = (result.recipients || []).join(", ");
+      showToast("success", `${t.emailSent} ${to}`);
     } catch (err) {
-      window.alert(`${t.emailFailed}: ${err.message}`);
+      showToast("error", `${t.emailFailed}: ${err.message}`);
     } finally {
       setSending(false);
     }
@@ -47,6 +59,12 @@ export default function Toolbar({ platformKey, data, columns, t, lang }) {
       <button className="btn btn--ghost" onClick={handleSendEmail} disabled={sending}>
         {sending ? t.emailSending : t.sendEmail}
       </button>
+
+      {toast && (
+        <div className={`toast toast--${toast.type}`} role="status" aria-live="polite">
+          {toast.msg}
+        </div>
+      )}
     </div>
   );
 }
